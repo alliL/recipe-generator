@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+html {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: #1C252A;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    margin: 0em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title {
+    padding: 0.5em;
 }
 
-.App-link {
-  color: #61dafb;
+.center-box {
+    margin: auto;
+    width: 75%;
+    border-radius: 1em;
+    background-color: #2A353B;
+    padding: 0.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdown {
+    margin: auto;
+    width: 90%;
+    border-radius: 0.5em;
+    background-color: #16A086;
+}
+
+.dropdown-title {
+    padding: 0.5em;
+    margin: .75em 0em .75em 0em;
+}
+
+.search-content {
+    padding: 1em;
+    margin: .75em 0em .75em 0em;
+    border-radius: 0.5em;
+}
+
+.search-title {
+    padding: 0em 0em .2em 0em;
+}
+
+.search-subtext {
+    padding: 0em 0em .5em 0em;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.search {
+    flex: 9;
+    border: 0px;
+    border-radius: .5em 0em 0em .5em;
+    height: 2em;
+    width: 100%;
+    padding: 0.5em 0em 0.5em 1em;
+    background-color: #ffffff;
+}
+
+.submit {
+    flex: 1;
+    border: 0px;
+    border-radius: 0em .5em .5em 0em;
+    height: 3em;
+    width: 100%;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    background-color: #09382E;
+    color: #ffffff;
+    font-family: 'Roboto';
 }
