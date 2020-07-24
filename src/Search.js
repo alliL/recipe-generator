@@ -1,28 +1,51 @@
-import React, { Component, useState } from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import app from './config'
+import axios from "axios";
+import "./App.css";
 
 const Search = (props) => {
-    const [input, setInput] = useState("");
+  const [data, setData] = useState({ hits: [] });
+  const [query, setQuery] = useState("");
+  const [search, setSearch] = useState("");
 
-    const handleSubmit = (evt) => {
-      evt.preventDefault();
-      console.log(input);
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        `https://api.edamam.com/search?q=${search}&app_id=${app.id}&app_key=${app.key}`
+      );
+      setData(result.data);
+    };
+    fetchData();
+  }, [search]);
 
-    return (
-      <div className='dropdown'>
-        <section className='search-content'>
-          <h2 className='search-title'>Search by keyword</h2>
-          <p className='search-subtext'>Enter ingredients that you have at home! Example: chicken spinach butter</p>
-          <div>
-            <form className='search-wrapper' onSubmit={handleSubmit}>
-              <input type="text" className="search" placeholder="Search..." value={input} onChange={e => setInput(e.target.value)}/>
-              <button type="submit" className="submit">Submit</button>
-            </form>
-          </div>
-        </section>
-      </div>
-    );
-}
+  return (
+    <div className="dropdown">
+      <section className="search-content">
+        <h2 className="search-title">Search by Ingredient</h2>
+        <div>
+          <form className="search-wrapper">
+            <input
+              type="text"
+              className="search"
+              placeholder="eg: chicken spinach butter"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <button
+              type="submit"
+              className="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                setSearch(query);
+              }}
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+  );
+};
 
 export default Search;
