@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import app from './config'
+import app from "./config";
 import axios from "axios";
 import "./App.css";
 
@@ -17,6 +17,8 @@ const Search = (props) => {
     };
     fetchData();
   }, [search]);
+
+  console.log(data);
 
   return (
     <div className="dropdown">
@@ -36,7 +38,8 @@ const Search = (props) => {
               className="submit"
               onClick={(e) => {
                 e.preventDefault();
-                setSearch(query);
+                // setSearch(query);
+                props.submitted(true);
               }}
             >
               Submit
