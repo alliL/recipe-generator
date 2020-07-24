@@ -13,10 +13,10 @@ const Search = (props) => {
       <div className='dropdown'>
         <section className='search-content'>
           <h2 className='search-title'>Search by keyword</h2>
-          <h4 className='search-subtext'>Enter ingredients that you have at home! Example: chicken spinach butter</h4>
+          <p className='search-subtext'>Enter ingredients that you have at home! Example: chicken spinach butter</p>
           <div>
             <form className='search-wrapper' onSubmit={handleSubmit}>
-              <input type="text" placeholder="Search..." className="search" value={input} onChange={e => setInput(e.target.value)}/>
+              <input type="text" className="search" placeholder="Search..." value={input} onChange={e => setInput(e.target.value)}/>
               <button type="submit" className="submit">Submit</button>
             </form>
           </div>

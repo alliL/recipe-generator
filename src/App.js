@@ -7,8 +7,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header>
-          <h1 className='title'>Recipe Generator</h1>
+        <header className='spacer'>
+          <div>
+            <h1 className='title'>Recipe Generator</h1>
+          </div>
         </header>
         <body>
           <div className='center-box'>

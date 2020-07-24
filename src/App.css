@@ -1,79 +1,118 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #1C252A;
+  background-color: #1c252a;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    color: #ffffff;
-    margin: 0em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  margin: 0em;
+}
+
+.spacer {
+  margin: 8px;
 }
 
 .title {
-    padding: 0.5em;
+  margin: auto;
+  width: 90%;
+  padding: 0.5em 0em 0.5em 0em;
 }
 
 .center-box {
-    margin: auto;
-    width: 75%;
-    border-radius: 1em;
-    background-color: #2A353B;
-    padding: 0.5em;
+  margin: auto;
+  width: 90%;
+  border-radius: 1em;
+  background-color: #2a353b;
+  padding: 0.5em 0em 0.5em 0em;
 }
 
 .dropdown {
-    margin: auto;
-    width: 90%;
-    border-radius: 0.5em;
-    background-color: #16A086;
+  margin: auto;
+  width: 90%;
+  border-radius: 0.5em;
+  background-color: #16a086;
 }
 
 .dropdown-title {
-    padding: 0.5em;
-    margin: .75em 0em .75em 0em;
+  padding: 0.5em;
+  margin: 0.75em 0em 0.75em 0em;
 }
 
 .search-content {
-    padding: 1em;
-    margin: .75em 0em .75em 0em;
-    border-radius: 0.5em;
+  padding: 1em;
+  margin: 0.75em 0em 0.75em 0em;
+  border-radius: 0.5em;
 }
 
 .search-title {
-    padding: 0em 0em .2em 0em;
+  padding: 0em 0em 0.2em 0em;
 }
 
 .search-subtext {
-    padding: 0em 0em .5em 0em;
+  padding: 0em 0em 0.5em 0em;
 }
 
 .search-wrapper {
-    position: relative;
-    display: flex;
-    width: 100%;
+  position: relative;
+  display: flex;
+  width: 100%;
 }
 
 .search {
-    flex: 9;
-    border: 0px;
-    border-radius: .5em 0em 0em .5em;
-    height: 2em;
-    width: 100%;
-    padding: 0.5em 0em 0.5em 1em;
-    background-color: #ffffff;
+  flex: 3;
+  border: 0px;
+  border-radius: 0.5em 0em 0em 0.5em;
+  height: 2em;
+  width: 100%;
+  padding: 0.5em 0em 0.5em 1em;
+  background-color: #ffffff;
 }
 
 .submit {
-    flex: 1;
-    border: 0px;
-    border-radius: 0em .5em .5em 0em;
-    height: 3em;
-    width: 100%;
-    padding: 0.5em 0.5em 0.5em 0.5em;
-    background-color: #09382E;
-    color: #ffffff;
-    font-family: 'Roboto';
+  flex: 1;
+  border: 0px;
+  border-radius: 0em 0.5em 0.5em 0em;
+  height: 3em;
+  width: 100%;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  background-color: #09382e;
+  color: #ffffff;
+  font-family: "Roboto";
+}
+
+/* smaller than or equal to 768 px (smartphones)
+larger than 768 px (small devices, tablets)
+larger than 992 px (medium devices)
+larger than 1200px (large devices) */
+
+@media (min-width: 768px) {
+  .search-content {
+    margin: 1em 0em 0em 0em;
+  }
+
+  .center-box {
+    padding: 1em 0em 1em 0em;
+  }
+}
+
+@media (min-width: 992px) {
+  .center-box {
+    padding: 1.5em 0em 1.5em 0em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .center-box {
+    padding: 2em 0em 2em 0em;
+  }
 }
