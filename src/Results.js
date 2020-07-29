@@ -9,11 +9,6 @@ const Results = (props) => {
           <img src={recipe.image} alt={recipe.label} />
         </td>
         <td>{recipe.label}</td>
-        <td>{recipe.yield}</td>
-        <td>
-          {convertToInteger(recipe.totalNutrients.ENERC_KCAL.quantity)}{" "}
-          {recipe.totalNutrients.ENERC_KCAL.unit}
-        </td>
         <td>
           <p>Protein:</p>
           <p>Fat:</p>
@@ -21,17 +16,21 @@ const Results = (props) => {
         </td>
         <td className="col-6">
           <p>
-            {convertToInteger(recipe.totalNutrients.PROCNT.quantity)}{" "}
+            {calculateUnitPerServing(recipe.totalNutrients.PROCNT.quantity, recipe.yield)}{" "}
             {recipe.totalNutrients.PROCNT.unit}
           </p>
           <p>
-            {convertToInteger(recipe.totalNutrients.FAT.quantity)}{" "}
+            {calculateUnitPerServing(recipe.totalNutrients.FAT.quantity, recipe.yield)}{" "}
             {recipe.totalNutrients.FAT.unit}
           </p>
           <p>
-            {convertToInteger(recipe.totalNutrients.CHOCDF.quantity)}{" "}
+            {calculateUnitPerServing(recipe.totalNutrients.CHOCDF.quantity, recipe.yield)}{" "}
             {recipe.totalNutrients.CHOCDF.unit}
           </p>
+        </td>
+        <td className="col-5">
+          {calculateUnitPerServing(recipe.totalNutrients.ENERC_KCAL.quantity, recipe.yield)}{" "}
+          {recipe.totalNutrients.ENERC_KCAL.unit}
         </td>
         <td className="col-7">
           {calculateUnitPerServing(recipe.totalWeight, recipe.yield)}{" "}
@@ -41,12 +40,8 @@ const Results = (props) => {
     );
   });
 
-  function convertToInteger(string) {
-    return Math.round(parseFloat(string));
-  }
-
-  function calculateUnitPerServing(totalWeight, numServings) {
-    return Math.round(parseFloat(totalWeight) / parseInt(numServings));
+  function calculateUnitPerServing(weight, numServings) {
+    return Math.round(parseFloat(weight) / parseInt(numServings));
   }
 
   return (
@@ -56,10 +51,9 @@ const Results = (props) => {
           <tr className="table-head">
             <th className="top-left-corner">Image</th>
             <th>Title</th>
-            <th>Servings</th>
-            <th>Energy</th>
-            <th>Nutrients</th>
+            <th>Nutrients per Serving</th>
             <th></th>
+            <th>Calories per Serving</th>
             <th className="top-right-corner">Weight per Serving</th>
           </tr>
         </thead>

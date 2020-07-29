@@ -25,18 +25,20 @@ const App = (props) => {
     if (data.hits.length !== 0) {
       setResultPage(true);
     }
-    // console.log(data.hits);
   }, [data]);
-
-  console.log(text);
 
   return (
     <div>
       <header className="spacer">
         {resultPage ? (
-          <h1 className="search-title">Search Results</h1>
+          <div className="results-title">
+            <h1>Search Results</h1>
+          </div>
+          
         ) : (
-          <h1 className="title">Recipe Generator</h1>
+          <div className="title">
+            <h1>Recipe Generator</h1>
+          </div>
         )}
       </header>
       {resultPage ? (

@@ -96,7 +96,7 @@ tr {
 
 /* RESULTS */
 
-.search-title {
+.results-title {
   margin: auto;
   width: 90%;
   padding: 0.5em 0em 0.3em 0em;
@@ -149,6 +149,10 @@ th {
   text-align: right;
 }
 
+.col-5 {
+  text-align: right;
+}
+
 .col-7 {
   text-align: right;
   padding: 1em 2em 0em 1em;
@@ -187,19 +191,87 @@ larger than 1200px (large devices) */
     margin: 1em 0em 0em 0em;
   }
 
-  .center-box {
-    padding: 1em 0em 1em 0em;
+  .home-center-box {
+    padding: 0.5em 0em 0.5em 0em;
+  }
+
+  .dropdown {
+    margin: auto;
+    width: 90%;
+  }
+
+  .results-title {
+    margin: auto;
+    width: 90%;
+  }
+
+  .back-button-section {
+    margin: auto;
+    width: 90%;
+  }
+
+  .results-center-box {
+    margin: auto;
+    width: 90%;
   }
 }
 
 @media (min-width: 992px) {
-  .center-box {
-    padding: 1.5em 0em 1.5em 0em;
+  .title {
+    margin: auto;
+    width: 90%;
+  }
+  
+  .home-center-box {
+    width: 90%;
+    padding: 0.5em 0em 0.5em 0em;
+  }
+
+  .dropdown {
+    margin: auto;
+    width: 95%;
+  }
+
+  .results-title {
+    margin: auto;
+    width: 90%;
+  }
+
+  .back-button-section {
+    margin: auto;
+    width: 90%;
+  }
+
+  .results-center-box {
+    margin: auto;
+    width: 90%;
   }
 }
 
 @media (min-width: 1200px) {
-  .center-box {
-    padding: 2em 0em 2em 0em;
+  .title {
+    margin: auto;
+    width: 65em;
+  }
+
+  .home-center-box {
+    margin: auto;
+    width: 65em;
+    padding: 0.5em 0em 0.5em 0em;
+  }
+
+  .results-title {
+    margin: auto;
+    width: 65em;
+  }
+
+  .back-button-section {
+    margin: auto;
+    width: 65em;
+  }
+
+  .results-center-box {
+    margin: auto;
+    width: 65em;
   }
 }
