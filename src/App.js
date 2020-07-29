@@ -28,6 +28,8 @@ const App = (props) => {
     // console.log(data.hits);
   }, [data]);
 
+  console.log(text);
+
   return (
     <div>
       <header className="spacer">
@@ -44,6 +46,7 @@ const App = (props) => {
               className="back"
               onClick={(e) => {
                 e.preventDefault();
+                setQuery("");
                 setResultPage(!resultPage);
               }}
             >
