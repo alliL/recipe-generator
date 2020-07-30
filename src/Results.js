@@ -10,29 +10,39 @@ const Results = (props) => {
         </td>
         <td>{recipe.label}</td>
         <td>
-          <p>Protein:</p>
-          <p>Fat:</p>
-          <p>Carbs:</p>
-        </td>
-        <td className="col-6">
-          <p>
-            {calculateUnitPerServing(recipe.totalNutrients.PROCNT.quantity, recipe.yield)}{" "}
+          <p className="inline">
+            Protein:{" "}
+            {calculateUnitPerServing(
+              recipe.totalNutrients.PROCNT.quantity,
+              recipe.yield
+            )}{" "}
             {recipe.totalNutrients.PROCNT.unit}
           </p>
-          <p>
-            {calculateUnitPerServing(recipe.totalNutrients.FAT.quantity, recipe.yield)}{" "}
+          <p className="inline">
+            Fat:{" "}
+            {calculateUnitPerServing(
+              recipe.totalNutrients.FAT.quantity,
+              recipe.yield
+            )}{" "}
             {recipe.totalNutrients.FAT.unit}
           </p>
-          <p>
-            {calculateUnitPerServing(recipe.totalNutrients.CHOCDF.quantity, recipe.yield)}{" "}
+          <p className="inline">
+            Carbs:{" "}
+            {calculateUnitPerServing(
+              recipe.totalNutrients.CHOCDF.quantity,
+              recipe.yield
+            )}{" "}
             {recipe.totalNutrients.CHOCDF.unit}
           </p>
         </td>
-        <td className="col-5">
-          {calculateUnitPerServing(recipe.totalNutrients.ENERC_KCAL.quantity, recipe.yield)}{" "}
+        <td className="inline">
+          {calculateUnitPerServing(
+            recipe.totalNutrients.ENERC_KCAL.quantity,
+            recipe.yield
+          )}{" "}
           {recipe.totalNutrients.ENERC_KCAL.unit}
         </td>
-        <td className="col-7">
+        <td>
           {calculateUnitPerServing(recipe.totalWeight, recipe.yield)}{" "}
           {recipe.totalNutrients.PROCNT.unit}
         </td>
@@ -49,10 +59,9 @@ const Results = (props) => {
       <table className="table">
         <thead>
           <tr className="table-head">
-            <th className="top-left-corner">Image</th>
-            <th>Title</th>
+            <th className="top-left-corner">Recipe</th>
+            <th className="recipe-name"></th>
             <th>Nutrients per Serving</th>
-            <th></th>
             <th>Calories per Serving</th>
             <th className="top-right-corner">Weight per Serving</th>
           </tr>
